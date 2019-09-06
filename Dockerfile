@@ -13,5 +13,5 @@ COPY zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
 
 COPY index.php html/index.php
 
-EXPOSE 80
+EXPOSE 443 80
 CMD ["bash", "-c", "nginx && php-fpm"]
