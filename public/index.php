@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html><?php date_default_timezone_set('Asia/Tokyo'); ?>
 <html>
 <head>
 <title>php-fpm with nginx</title>
