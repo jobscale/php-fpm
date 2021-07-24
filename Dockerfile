@@ -2,8 +2,8 @@ FROM php:fpm-buster
 WORKDIR /var/www
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y tzdata \
- && apt-get install -y lsb-release curl git vim \
- && apt-get install -y nginx nginx-extras unzip
+ lsb-release curl git vim zip unzip \
+ nginx nginx-extras
 RUN curl -sLo composer-setup.php https://getcomposer.org/installer \
  && php composer-setup.php && rm composer-setup.php \
  && mv composer.phar /usr/local/bin/composer
