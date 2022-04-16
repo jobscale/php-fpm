@@ -1,4 +1,4 @@
-FROM php:fpm-buster
+FROM php:fpm-bullseye
 WORKDIR /var/www
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y tzdata \
