@@ -2,7 +2,7 @@ FROM nginx:mainline
 WORKDIR /usr/share/nginx
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y tzdata \
- lsb-release curl git vim zip unzip \
+ lsb-release curl git vim unzip \
  $(apt-cache search php | grep "^php7" | grep -v snmp | awk '{print $1}')
 RUN rm -fr /var/lib/apt/lists/*
 
