@@ -1,7 +1,7 @@
 ### run with container
 
 ```
-git clone git@github.com:jobscale/php-fpm.git
+git clone https://github.com/jobscale/php-fpm.git
 cd php-fpm
 ```
 
