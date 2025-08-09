@@ -1,6 +1,6 @@
 FROM nginx:mainline
 WORKDIR /usr/share/nginx
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends tzdata \
  lsb-release curl git vim unzip \
  $(apt-cache search php | grep "^php8" | grep -v php8.2-apcu | grep -v php8.2-gmagick | grep -v php8.2-yac | awk '{print $1}') \

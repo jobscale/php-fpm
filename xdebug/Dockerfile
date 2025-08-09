@@ -1,11 +1,11 @@
 FROM nginx:mainline
 WORKDIR /usr/share/nginx
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get install -y tzdata \
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends tzdata \
  lsb-release curl git vim unzip \
  php-xdebug \
- $(apt-cache search php | grep "^php7" | grep -v snmp | awk '{print $1}')
-RUN rm -fr /var/lib/apt/lists/*
+ $(apt-cache search php | grep "^php7" | grep -v snmp | awk '{print $1}') \
+ && apt-get clean && rm -fr /var/lib/apt/lists/*
 
 RUN curl -sLo composer-setup.php https://getcomposer.org/installer \
  && php composer-setup.php && rm composer-setup.php \
